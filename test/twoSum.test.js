@@ -3,7 +3,7 @@ const expect = require('chai').expect
 
 const {twoSumBigOnSquared} = require('../controllers/twoSum')
 
-describe('TwoSum แบบ Big O n^2', () => {
+describe('Hello Chai > TwoSum แบบ Big O n^2', () => {
   let nums = [1,2,3,4,5]
   let target = 0
 
