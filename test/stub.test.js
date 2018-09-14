@@ -5,7 +5,7 @@ const expect = chai.expect
 
 const func = require('../controllers/func')
 
-describe("Hello Stubs", function () {
+describe("Hello Stubs", () => {
   var stubCallback
   beforeEach(() => {
     stubCallback = sinon.stub()
@@ -15,14 +15,14 @@ describe("Hello Stubs", function () {
     stubCallback.resetBehavior()
   })
 
-  it("สามารถเรียก ใช้งาน Stub ได้", function () {
+  it("สามารถเรียก ใช้งาน Stub ได้", () => {
     stubCallback('hello')
     // console.log('Stub return: ', stubCallback.firstCall.args) // [ 'hello' ]
     expect(stubCallback.firstCall.args).to.have.lengthOf(1)
     expect(stubCallback.firstCall.args[0]).to.equal('hello')
   })
 
-  it('ทดสอบ stub วิธีการที่แตกต่างกัน โดยขึ้นอยู่กับอาร์กิวเมนต์', function () {
+  it('ทดสอบ stub วิธีการที่แตกต่างกัน โดยขึ้นอยู่กับอาร์กิวเมนต์', () => {
     stubCallback.withArgs(42).returns(1)
 
     // console.log('No return value, no exception: ', stubCallback()) // No return value, no exception
@@ -31,7 +31,7 @@ describe("Hello Stubs", function () {
     expect(stubCallback(42)).to.equal(1)
   })
 
-  it('ทดสอบ stub additionNumber Return 7', function () {
+  it('ทดสอบ stub additionNumber Return 7', () => {
     stubCallback(func, 'additionNumber')
 
     stubCallback.withArgs(5, 2).returns(7)
