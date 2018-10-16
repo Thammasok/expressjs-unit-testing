@@ -13,14 +13,14 @@ describe('Hello Chai > TwoSum แบบ Big O n^2', () => {
   //   target = 0
   // })
   
-  it('ส่งค่า nums = [] และ target = 0 ไป ต้อง Return false', () => {
+  it('Should return false when calling function with send nums = [] and target = 0', () => {
     const result = twoSumBigOnSquared([], target)
     
     //Assert
     expect(false).to.be.equal(result)
   })
 
-  it(`ส่งค่า nums = [${nums}] และ target = 6 ไป ต้อง Return array length 2`, () => {
+  it(`Should return array length 2 when calling function with send nums = [${nums}] and target = 6`, () => {
     target = 6
     
     const result = twoSumBigOnSquared(nums, target)
@@ -28,7 +28,7 @@ describe('Hello Chai > TwoSum แบบ Big O n^2', () => {
     expect(result).to.be.have.lengthOf(2)
   })
 
-  it(`ส่งค่า nums = [${nums}] และ target = 9 ไป ต้อง Return [3,4]`, () => {
+  it(`Should return [3,4] when calling function with send nums = [${nums}] and target = 9`, () => {
     target = 9
     
     const result = twoSumBigOnSquared(nums, target)
@@ -37,7 +37,7 @@ describe('Hello Chai > TwoSum แบบ Big O n^2', () => {
     expect(result[1]).to.equal(4)
   })
 
-  it(`ส่งค่า nums = [${nums}] และ target = 15 ไป ต้อง Return false`, () => {
+  it(`Should return false when calling function with send nums = [${nums}] and target = 15`, () => {
     target = 15
     
     const result = twoSumBigOnSquared(nums, target)

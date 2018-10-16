@@ -15,14 +15,14 @@ describe("Hello Stubs", () => {
     stubCallback.resetBehavior()
   })
 
-  it("สามารถเรียก ใช้งาน Stub ได้", () => {
+  it("Should call stub", () => {
     stubCallback('hello')
     // console.log('Stub return: ', stubCallback.firstCall.args) // [ 'hello' ]
     expect(stubCallback.firstCall.args).to.have.lengthOf(1)
     expect(stubCallback.firstCall.args[0]).to.equal('hello')
   })
 
-  it('ทดสอบ stub วิธีการที่แตกต่างกัน โดยขึ้นอยู่กับอาร์กิวเมนต์', () => {
+  it('Test call Stub with difference agreement', () => {
     stubCallback.withArgs(42).returns(1)
 
     // console.log('No return value, no exception: ', stubCallback()) // No return value, no exception
@@ -31,7 +31,7 @@ describe("Hello Stubs", () => {
     expect(stubCallback(42)).to.equal(1)
   })
 
-  it('ทดสอบ stub additionNumber Return 7', () => {
+  it('Should return 7 when called stub additionNumber', () => {
     stubCallback(func, 'additionNumber')
 
     stubCallback.withArgs(5, 2).returns(7)

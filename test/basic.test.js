@@ -1,6 +1,6 @@
 // const assert = require('assert');
 
-describe('แสดงลำดับการทำงานของ Function ต่างๆ ใน Mocha', () => {
+describe('Show sequence calling Function in Mocha', () => {
   beforeEach(() => {
     // beforeEach ทุก Test case เราจะเข้า function นี้ก่อนเสมอ
     console.log('2. beforeEach: ทุก Test case เราจะเข้า function นี้ก่อนเสมอ')

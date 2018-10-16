@@ -11,13 +11,13 @@ var expect = chai.expect
 var assert = chai.assert
 
 describe("Hello Spy", () => {
-  it("เมื่อเรียก function callback จะส่งข้อความ hello 007 ทักทายกลับ", () => {
+  it("Should return 'hello 007' when calling the callback function", () => {
     var cb = sinon.spy()
     func.hello("007", cb)
     cb.should.have.been.calledWith("hello 007")
   })
 
-  it("สามารถเรียก Function hello2 ได้", () => {
+  it("Should called hello2 Function", () => {
     var hello2Spy = sinon.spy(func.hello2)
     hello2Spy()
     expect( hello2Spy.called ).to.be.equal(true)
@@ -25,13 +25,13 @@ describe("Hello Spy", () => {
 })
 
 describe("Hello Addition Number Spy", () => {
-  it("สามารถเรียก additionNumber พร้อมส่ง arguments 5, 7", () => {
+  it("Should be called when calling additionNumber function with send arguments 5, 7", () => {
     var additionNumberSpy = sinon.spy(func.additionNumber)
     additionNumberSpy(5, 7)
     additionNumberSpy.should.have.been.calledWith(5, 7)
   })
 
-  it("สามารถเรียก additionNumber พร้อมส่ง arguments 5, 7 จะส่งค่า 12 กลับมา", () => {
+  it("Should return 12 when calling additionNumber function with send arguments 5, 7", () => {
     var additionNumberSpy = sinon.spy(func.additionNumber)
     additionNumberSpy(5, 7)
     additionNumberSpy.should.have.always.returned(12)
