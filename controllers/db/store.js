@@ -13,6 +13,7 @@ module.exports = database => {
       if (user === undefined || typeof user !== "object") {
         throw new Error("Cannot add user, input user is invalid.")
       }
+      
       const newUsers = [...database.getUsers(), user]
       database.setUsers(newUsers, callback)
     },
